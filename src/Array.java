@@ -1,11 +1,8 @@
 import java.util.Arrays;
+/**
+ * Решение задач на массивы
+ */
 public class Array {
-    public static void main(String[] args) {
-        task1_1();
-        task1_2();
-        task1_3();
-        task1_4();
-    }
 
     //Объявите три массива:
     //Целочисленный массив, заполненный тремя цифрами — 1, 2 и 3 — с помощью ключевого слова new.
@@ -13,10 +10,11 @@ public class Array {
     //Произвольный массив. Тип и количество данных определите сами. Самостоятельно выберите способ создания
     // массива: с помощью ключевого слова или сразу заполненный элементами.
     public static void task1_1() {
-        int[] integer = new int[3];
-        integer[0] = 1;
-        integer[1] = 2;
-        integer[2] = 3;
+        System.out.println("Задача 1_1");
+        int[] integ = new int[3];
+        integ[0] = 1;
+        integ[1] = 2;
+        integ[2] = 3;
         double[] doud = {1.57, 7.654, 9.986};
         boolean[] boole = {true, false};
     }
@@ -24,6 +22,7 @@ public class Array {
     //Распечатайте на отдельной строчке элементы каждого массива по порядку через запятую.
     // В конце строки запятую ставить не надо.
     public static void task1_2() {
+        System.out.println("Задача 1_2");
         int[] integ = new int[3];
         integ[0] = 1;
         integ[1] = 2;
@@ -57,6 +56,7 @@ public class Array {
     //то в этой задаче результат должен быть таким:
     //// произвольные элементы третьего массива в обратном порядке
     public static void task1_3() {
+        System.out.println("Задача 1_3");
         int[] integ = new int[3];
         integ[0] = 1;
         integ[1] = 2;
@@ -86,6 +86,7 @@ public class Array {
     //Пройдитесь по первому целочисленному массиву и все нечетные числа в нем сделайте четными (нужно прибавить 1).
     //Важно: код должен работать с любым целочисленным массивом, поэтому для решения задания используйте циклы.
     public static void task1_4() {
+        System.out.println("Задача 1_4");
         int[] arr = new int[10];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i;
