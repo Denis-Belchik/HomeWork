@@ -235,4 +235,8 @@ public class IfElse {
         System.out.println();
     }
 
+    public static void tas(){
+
+    }
+
 }
