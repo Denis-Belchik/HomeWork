@@ -2,15 +2,24 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * Решение задач на массивы
+ * Задачи на массивы
  */
 public class Array {
 
     public static void main(String[] args) {
+        task1_1();
+        task1_2();
+        task1_3();
+        task1_4();
         task2_1();
         task2_2();
         task2_3();
         task2_4();
+        task3_1UP();
+        task3_2UP();
+        task3_3UP();
+        task3_4UP();
+        task3_5UP();
     }
 
     public static int[] generateRandomArray() {
@@ -47,18 +56,21 @@ public class Array {
         double[] doud = {1.57, 7.654, 9.986};
         boolean[] boole = {true, false};
         for (int i = 0; i < integ.length; i++) {
-            if (i != integ.length - 1) System.out.print(integ[i] + ", ");
-            else System.out.println(integ[i]);
+            System.out.print(integ[i]);
+            if (i != integ.length - 1)
+                System.out.print(", ");
         }
-
+        System.out.println();
         for (int i = 0; i < doud.length; i++) {
-            if (i != doud.length - 1) System.out.print(doud[i] + ", ");
-            else System.out.println(doud[i]);
+            System.out.print(doud[i]);
+            if (i != doud.length - 1)
+                System.out.print(", ");
         }
-
+        System.out.println();
         for (int i = 0; i < boole.length; i++) {
-            if (i != boole.length - 1) System.out.print(boole[i] + ", ");
-            else System.out.println(boole[i]);
+            System.out.print(boole[i]);
+            if (i != boole.length - 1)
+                System.out.print(", ");
         }
         System.out.println();
     }
@@ -78,18 +90,23 @@ public class Array {
         double[] doud = {1.57, 7.654, 9.986};
         boolean[] boole = {true, false};
         for (int i = integ.length - 1; i >= 0; i--) {
-            if (i != 0) System.out.print(integ[i] + ", ");
-            else System.out.println(integ[i]);
+            System.out.print(integ[i]);
+            if (i != 0)
+                System.out.print(", ");
         }
+        System.out.println();
 
         for (int i = doud.length - 1; i >= 0; i--) {
-            if (i != 0) System.out.print(doud[i] + ", ");
-            else System.out.println(doud[i]);
+            System.out.println(doud[i]);
+            if (i != 0)
+                System.out.print(", ");
         }
 
+        System.out.println();
         for (int i = boole.length - 1; i >= 0; i--) {
-            if (i != 0) System.out.print(boole[i] + ", ");
-            else System.out.println(boole[i]);
+            System.out.print(boole[i]);
+            if (i != 0)
+                System.out.print(", ");
         }
         System.out.println();
     }
@@ -103,7 +120,8 @@ public class Array {
             arr[i] = i;
         }
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 != 0) arr[i]++;
+            if (arr[i] % 2 != 0)
+                arr[i]++;
         }
         System.out.println(Arrays.toString(arr));
     }
@@ -121,7 +139,6 @@ public class Array {
         System.out.println("Сумма трат за месяц составила " + sum + " рублей");
         System.out.println();
     }
-
 
     //Также бухгалтерия попросила найти минимальную и максимальную трату за день.
     //Напишите программу, которая решит эту задачу, и выведите в консоль результат в формате:
@@ -154,7 +171,7 @@ public class Array {
                 cost) {
             sum += current;
         }
-        result = sum / 30f;
+        result = (float) sum / cost.length;
         System.out.printf("Средняя сумма трат за месяц составила %.2f рублей\n", result);
         System.out.println();
     }
@@ -173,6 +190,114 @@ public class Array {
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         for (int i = reverseFullName.length - 1; i >= 0; i--) {
             System.out.print(reverseFullName[i]);
+        }
+        System.out.println();
+        System.out.println();
+    }
+
+    /*
+    Создайте матрицу 3х3 (двумерный массив типа int). Заполните единицами обе диагонали матрицы и напечатайте ее в консоль.
+    Постарайтесь заполнить обе диагонали в одном цикле.
+     */
+    public static void task3_1UP() {
+        System.out.println("Задача 3_1");
+        int[][] matrix = new int[7][7];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (i == j || j == matrix[i].length - 1 - i) {
+                    matrix[i][j] = 1;
+                }
+            }
+        }
+
+        for (int[] row : matrix) {
+            for (int column : row) {
+                System.out.print(column + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    /*
+    У нас есть массив, в котором содержатся целочисленные значения от 1 до 5.
+    Наш коллега что-то напутал, в итоге массив читается не с начала, а с конца.
+    Нам нужно исправить ошибку и переработать код так, чтобы массив читался в правильном порядке.
+    Нам дан массив чисел: {5, 4, 3, 2, 1}
+    Необходимо привести его к виду: {1, 2, 3, 4, 5}
+    Решите задачу с использованием дополнительного массива.
+    Напечатайте массив до преобразования и после с помощью
+    System.out.println(Arrays.toString(arr));
+     */
+    public static void task3_2UP() {
+        System.out.println("Задача 3_2");
+        int[] arr1 = {5, 4, 3, 2, 1};
+        int[] arr2 = new int[5];
+
+        for (int i = arr1.length - 1; i >= 0; i--) {
+            arr2[arr1.length - 1 - i] = arr1[i];
+        }
+
+        System.out.println(Arrays.toString(arr1));
+        System.out.println(Arrays.toString(arr2));
+        System.out.println();
+    }
+
+    /*
+    Решите предыдущее задание, но без использования дополнительного массива.
+    Необходимо добиться того, чтобы исходный массив полностью соответствовал второму массиву из прошлого задания.
+    Выведите результат программы в консоль тем же способом.
+    **Уточнения**:
+    - Это задание не на сортировку.
+    - Не использовать Arrays.sort() и другие способы сортировок.
+    - Числа в порядке убывания даны исключительно для указания направления чтения.
+    - Массив может быть 5 8 2 3 9, нужно из него сделать 9 3 2 8 5.
+     */
+    public static void task3_3UP() {
+        System.out.println("Задача 3_3");
+        int[] arr = {9, 8, 7, 6, 5, 4, 3, 2, 1};
+        int value;
+        for (int i = 0; i < arr.length / 2; i++) {
+            value = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = arr[i];
+            arr[i] = value;
+        }
+
+        System.out.println(Arrays.toString(arr));
+        System.out.println();
+    }
+
+    /*
+    Задача, которая используется/бывает/встречается на собеседованиях.
+    Дан массив чисел {−6, 2, 5, −8, 8, 10, 4, −7, 12, 1}
+    Необходимо найти два числа, сумма которых равна −2.
+    Напечатать эти числа в консоль.
+     */
+    public static void task3_4UP() {
+        System.out.println("Задача 3_4");
+        int[] arr = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 1 + i; j < arr.length; j++) {
+                if (arr[i] + arr[j] == -2)
+                    System.out.println(arr[i] + " + " + arr[j] + " = -2");
+            }
+        }
+
+        System.out.println();
+    }
+
+    /*
+    Усложняем предыдущую задачу. Найдите все пары чисел, сумма которых равна −2. Напечатайте их в консоль.
+     */
+    public static void task3_5UP() {
+        System.out.println("Задача 3_5");
+        int[] arr = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[i] + arr[j] == -2)
+                    System.out.println(arr[i] + " + " + arr[j] + " = -2");
+            }
         }
         System.out.println();
     }
