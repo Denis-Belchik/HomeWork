@@ -1,3 +1,6 @@
+/**
+ * Задачи на переменные
+ */
 public class Variables {
     public static void main(String[] args) {
         task1_1();

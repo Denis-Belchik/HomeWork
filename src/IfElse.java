@@ -1,3 +1,6 @@
+/**
+ * Задачи на условия
+ */
 public class IfElse {
     public static void main(String[] args) {
         task1_1();
@@ -319,7 +322,29 @@ public class IfElse {
     // Одобрено/отказано».
     public static void task3_2UP() {
         System.out.println("Задача 3_2 повышенная сложность");
+        int age = 31;
+        float salary = 80_000;
+        float wantedSum = 600_000;
+        float bet = 10;
+        float pay;
+        float payMax = salary / 2;
+        if (age < 23) {
+            bet += 1;
+        } else if (age < 30) {
+            bet += 0.5;
+        }
+        if (salary >= 80_000) {
+            bet -= 0.7;
+        }
+        pay = (wantedSum / 100 * bet / 12) + wantedSum / 12;
 
+        if (pay <= payMax) {
+            System.out.println("Максимальный платеж при ЗП " + salary + " равен " + payMax + " рублей. Платеж по кредиту " + pay + " рублей. Одобрено");
+        } else {
+            System.out.println("Максимальный платеж при ЗП " + salary + " равен " + payMax + " рублей. Платеж по кредиту " + pay + " рублей. Недобрено");
+        }
+        System.out.println(bet);
         System.out.println();
     }
+
 }
