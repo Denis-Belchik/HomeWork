@@ -124,10 +124,14 @@ public class Str {
     public static void task2_3UP() {
         System.out.println("Задача 2_3 повышенная сложность");
         String str1 = "135";
-        String str2 = "246";
+        String str2 = "2467";
         StringBuilder strBuilder = new StringBuilder(str1);
-        for (int i = 0, j = 1; i < str2.length(); i++, j++) {
+
+        for (int i = 0, j = 1; i < str2.length(); i++) {
             strBuilder.insert(i + j, str2.charAt(i));
+            if (strBuilder.length() > i + j) {
+                j++;
+            }
         }
         System.out.println("Данные строки — " + strBuilder);
         System.out.println();
@@ -141,16 +145,28 @@ public class Str {
       */
     public static void task2_4UP() {
         System.out.println("Задача 2_4 повышенная сложность");
-        String str = "aabccddefgghiijjkk";
+        String str = "abaasshsashzajsfsaaghddhhdfab";
         StringBuilder strBuilder = new StringBuilder(str);
-        int i = 0;
-        while (i < strBuilder.length() - 1) {
-            if (strBuilder.charAt(i) == strBuilder.charAt(i + 1)) {
-                strBuilder.delete(i, i + 1);
-            } else {
-                i++;
+
+        char val;
+        for (int i = 0; i < strBuilder.length(); i++) {
+            val = strBuilder.charAt(i);
+            for (int j = i + 1; j < strBuilder.length(); ) {
+                if (val == strBuilder.charAt(j))
+                    strBuilder.delete(j, j + 1);
+                else {
+                    j++;
+                }
             }
         }
+//        int i = 0;
+//        while (i < strBuilder.length() - 1) {
+//            if (strBuilder.charAt(i) == strBuilder.charAt(i + 1)) {
+//                strBuilder.delete(i, i + 1);
+//            } else {
+//                i++;
+//            }
+//        }
         System.out.println(strBuilder);
         System.out.println();
     }
