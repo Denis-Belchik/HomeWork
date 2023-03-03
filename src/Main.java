@@ -4,9 +4,9 @@ public class Main {
         Author namePushkin = new Author("Aleksandr", "Pushkin");
         Book war = new Book("War and Peace", nameLev, 1878);
         Book roman = new Book("Roman", namePushkin, 1821);
-        Book roman1 = new Book("Roman", namePushkin, 182);
+        Book roman1 = new Book("Roman", namePushkin, 1821);
         war.setYear(1700);
-        roman.setYear(1400);
+        //roman.setYear(1400);
 
         System.out.println("war.getName() = " + war.getName());
         System.out.println("war.getYear() = " + war.getYear());
