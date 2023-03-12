@@ -104,7 +104,7 @@ public class Str {
         char[] nameChar = fullName.toCharArray();
         nameChar[0] = Character.toUpperCase(nameChar[0]);
         for (int i = 0; i < nameChar.length; i++) {
-            if (Character.isWhitespace(nameChar[i])) { //nameChar[i] == ' ') {
+            if (Character.isWhitespace(nameChar[i])) {
                 nameChar[i + 1] = Character.toUpperCase(nameChar[i + 1]);
             }
         }
@@ -123,12 +123,19 @@ public class Str {
       */
     public static void task2_3UP() {
         System.out.println("Задача 2_3 повышенная сложность");
-        String str1 = "135";
-        String str2 = "2467";
-        StringBuilder strBuilder = new StringBuilder(str1);
-
-        for (int i = 0, j = 1; i < str2.length(); i++) {
-            strBuilder.insert(i + j, str2.charAt(i));
+        String str1 = "1357";
+        String str2 = "2468888";
+        String temp;
+        StringBuilder strBuilder;
+        if (str1.length() < str2.length()){
+            temp = str1;
+            strBuilder = new StringBuilder(str2);
+        } else {
+            temp = str2;
+            strBuilder = new StringBuilder(str1);
+        }
+        for (int i = 0, j = 1; i < temp.length(); i++) {
+            strBuilder.insert(i + j, temp.charAt(i));
             if (strBuilder.length() > i + j) {
                 j++;
             }
@@ -147,7 +154,6 @@ public class Str {
         System.out.println("Задача 2_4 повышенная сложность");
         String str = "abaasshsashzajsfsaaghddhhdfab";
         StringBuilder strBuilder = new StringBuilder(str);
-
         char val;
         for (int i = 0; i < strBuilder.length(); i++) {
             val = strBuilder.charAt(i);
@@ -159,14 +165,6 @@ public class Str {
                 }
             }
         }
-//        int i = 0;
-//        while (i < strBuilder.length() - 1) {
-//            if (strBuilder.charAt(i) == strBuilder.charAt(i + 1)) {
-//                strBuilder.delete(i, i + 1);
-//            } else {
-//                i++;
-//            }
-//        }
         System.out.println(strBuilder);
         System.out.println();
     }

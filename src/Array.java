@@ -272,18 +272,31 @@ public class Array {
     Дан массив чисел {−6, 2, 5, −8, 8, 10, 4, −7, 12, 1}
     Необходимо найти два числа, сумма которых равна −2.
     Напечатать эти числа в консоль.
+    Может потребоваться отсортировать массив с помощью Arrays.sort(arr).
      */
     public static void task3_4UP() {
         System.out.println("Задача 3_4");
         int[] arr = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
-
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 1 + i; j < arr.length; j++) {
-                if (arr[i] + arr[j] == -2)
-                    System.out.println(arr[i] + " + " + arr[j] + " = -2");
+        Arrays.sort(arr);
+        int right = arr.length -1;
+        int left = 0;
+        int sum = -2;
+        while(right != left){
+            if (arr[left] + arr[right] > sum){
+                right--;
+            } else if (arr[left] + arr[right] < sum){
+                left++;
+            }else {
+                System.out.println(arr[left] + " + " + arr[right] + " = -2");
+                break;
             }
         }
-
+//        for (int i = 0; i < arr.length; i++) {
+//            for (int j = 1 + i; j < arr.length; j++) {
+//                if (arr[i] + arr[j] == -2)
+//                    System.out.println(arr[i] + " + " + arr[j] + " = -2");
+//            }
+//        }
         System.out.println();
     }
 
@@ -293,13 +306,12 @@ public class Array {
     public static void task3_5UP() {
         System.out.println("Задача 3_5");
         int[] arr = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if (arr[i] + arr[j] == -2)
-                    System.out.println(arr[i] + " + " + arr[j] + " = -2");
+        for (int k : arr) {
+            for (int i : arr) {
+                if (k + i == -2)
+                    System.out.println(k + " + " + i + " = -2");
             }
         }
         System.out.println();
     }
-
 }
